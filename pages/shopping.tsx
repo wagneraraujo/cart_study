@@ -100,15 +100,20 @@ function Shopping() {
             <div className="cart" style={{ padding: "20px", background: "#f1f1f1", width: "50%" }}>
                 <h3>Carrinho</h3>
                 <ul>
-                    {shoppingCart.map((item) => (
-                        <li key={item.product.id}>
-                            <h4>{item.product.title}</h4>
-                            <p>{item.product.price}</p>
-                            <p>QTD: {item.quantity}</p>
-                            <p>Total: {item.quantity * item.product.price}</p>
-                            <button onClick={() => handleRemoveCart(item.product.id)}>Remover do Carrinho</button>
-                        </li>
-                    ))}
+                    {shoppingCart.length === 0 ? (
+                        <p>Carrinho vazio</p>
+                    ) :
+                        (
+                            shoppingCart.map((item) => (
+                                <li key={item.product.id}>
+                                    <h4>{item.product.title}</h4>
+                                    <p>{item.product.price}</p>
+                                    <p>QTD: {item.quantity}</p>
+                                    <p>Total: {item.quantity * item.product.price}</p>
+                                    <button onClick={() => handleRemoveCart(item.product.id)}>Remover do Carrinho</button>
+                                </li>
+                            ))
+                        )}      
                 </ul>
             </div>
         </div>
