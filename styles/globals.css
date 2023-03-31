@@ -87,12 +87,20 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+
+}
+
+ul{
+  padding:20px;
+  list-style-type: none;
+}
+ul li{
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding:20px
+}
+button{
+  margin:16px;
 }
 
 a {
